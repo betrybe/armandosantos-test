@@ -21,7 +21,7 @@ function cartItemClickListener(event) {
   const item = event.target;
   const text = event.target.innerText;
   if (item.parentNode) {
-    const price = (Math.round(text.substr(text.indexOf('PRICE: $') + 8) * 100) / 100).toFixed(2);
+    const price = (Math.round(text.substr(text.indexOf('PRICE: $') + 8) * 100) / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     calculateTotal(-price);
     item.parentNode.removeChild(item);
   }
