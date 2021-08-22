@@ -1,28 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-  </head>
+<html lang="pt-br">
 
-  <body>
-	<h1 class="header">Ofertas do dia</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- CSS BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>..:: Market Libre - Tudo de tudo!!! ::.. </title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container">
+      <a class="navbar-brand logo-loja">Logo loja</a>
+    </div>
+  </nav>
+  <h1 class="header">Ofertas do dia</h1>
+  <div class="span">
     <span class="header">Aproveite esses preços agora mesmo! Novas ofertas todos os dias.</span>
-<p>
-    <section class="container">
-      <span class="loading">loading...</span>
+  </div>
+  <p>
+  <div class="text-center">
+    <span class="loading">Loading...</span>
+  </div>
 
-      <section class="items"></section>
-      <section class="cart">
-        <span class="cart__title">Carrinho de compras</span>
-        <ol class="cart__items"></ol>
-        <span>Total: R$ <span class="total-price">0</span></span>
-        <button class="empty-cart">Limpar Carrinho</button>
-      </section>
+  <section class="container">
+    <section class="items"></section>
+    <section class="cart">
+      <span class="cart__title">Carrinho de compras</span>
+      <button type="button" class="btn btn-danger empty-cart">Esvaziar Carrinho</button>
+      <ol class="cart__items"></ol>
+      <div class="alert alert-dark">
+        <span>Preço total: R$ <span class="total-price">0</span></span>
+      </div>
     </section>
-  </body>
+  </section>
+
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+</body>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-md-4 d-flex align-items-center">
+    <span class="text-muted">© 2021 Company, Inc</span>
+  </div>
+</footer>
+
 </html>
