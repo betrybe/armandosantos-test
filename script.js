@@ -31,7 +31,9 @@ function cartItemClickListener(event) {
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
-  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.innerText = `SKU: ${sku}
+                  PRODUTO: ${name} 
+                  PREÇO: $${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
   calculateTotal(salePrice);
   return li;
@@ -41,17 +43,17 @@ function addToCart(event) {
   const button = event.target;
   const itemID = button.parentNode.firstChild.innerHTML;
   fetch(`https://api.mercadolibre.com/items/${itemID}`)
-  .then(response => response.json())
-  .then((data) => {
-    const newCartItem = {
-      sku: data.id,
-      name: data.title,
-      salePrice: data.price,
-    };
-    const itemsList = document.querySelector('.cart__items');
-    itemsList.appendChild(createCartItemElement(newCartItem));
-    refreshStorage();
-  });
+    .then(response => response.json())
+    .then((data) => {
+      const newCartItem = {
+        sku: data.id,
+        name: data.title,
+        salePrice: data.price,
+      };
+      const itemsList = document.querySelector('.cart__items');
+      itemsList.appendChild(createCartItemElement(newCartItem));
+      refreshStorage();
+    });
 }
 
 function createCustomElement(element, className, innerText) {
@@ -69,9 +71,9 @@ function createProductItemElement({ sku, name, image }) {
   section.className = 'item';
 
   section.appendChild(createCustomElement('span', 'item__sku', sku));
-  section.appendChild(createCustomElement('span', 'item__title', name));
+  section.appendChild(createCustomElement('span', 'item__title card-title', name));
   section.appendChild(createProductImageElement(image));
-  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
+  section.appendChild(createCustomElement('button', 'item__add btn btn-success', 'Adicionar ao carrinho!'));
 
   return section;
 }
@@ -83,7 +85,7 @@ function getSkuFromProductItem(item) {
 function clearCart() {
   document.querySelector('.empty-cart').addEventListener('click', () => {
     document.querySelector('.cart__items').innerHTML = '';
-    document.querySelector('.total-price').innerText = '0.00';
+    document.querySelector('.total-price').innerText = '0';
     refreshStorage();
   });
 }
