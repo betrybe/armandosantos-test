@@ -41,7 +41,7 @@ function addToCart(event) {
   const button = event.target;
   const itemID = button.parentNode.firstChild.innerHTML;
   fetch(`https://api.mercadolibre.com/items/${itemID}`)
-  .then(response => response.json()
+  .then(response => response.json())
   .then((data) => {
     const newCartItem = {
       sku: data.id,
